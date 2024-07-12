@@ -43,6 +43,15 @@
       </li>
     </ul>
 
-    <script src="./js/task-1.js" type="module"></script>
+    <script src="./js/task-1.js" type="module">
+      const categoriesList = document.getElementById('categories');
+      const categoryItems = categoriesList.querySelectorAll('li.item');
+      console.log(`Total categories: ${categoryItems.length}`);
+      categoryItems.forEach((item) => {
+        const categoryTitle = item.querySelector('h2').textContent;
+        const categoryElements = item.querySelectorAll('ul > li');
+        console.log(`${categoryTitle} - ${categoryElements.length} items`);
+      });
+    </script>
   </body>
 </html>
