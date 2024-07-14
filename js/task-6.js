@@ -22,13 +22,15 @@ destroyButton.addEventListener('click', function() {
   boxesContainer.innerHTML = '';
 });
 function createBoxes(amount) {
-  let size = 30; 
+  let size = 30;
+  const fragment = document.createDocumentFragment(); 
   for (let i = 0; i < amount; i++) {
     const div = document.createElement('div');
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
     div.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(div);
-    size += 10; 
+    fragment.appendChild(div);
+    size += 10;
   }
+  boxesContainer.appendChild(fragment);
 }
